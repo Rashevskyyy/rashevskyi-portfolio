@@ -22,11 +22,10 @@ const Contact = () => {
             })
                 .then(response => {
                     if(response.ok) {
-                        toast('🦄 Wow so easy!');
+                        toast('Message sent!');
                         reset();
                     } else {
-                        toast('🦄 Wow so easy!');
-                        console.log('1')
+                        toast('Something was wrong!');
                     }
                 });
         };
