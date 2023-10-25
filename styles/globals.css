@@ -49,3 +49,24 @@
     @apply w-full h-[180px] p-6 rounded-lg resize-none;
   }
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 100%;
+  margin-left: 8px;
+  margin-top: 8px;
+  padding: 2px 3px;
+  background-color: #fff;
+  color: black;
+  border-radius: 2px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+}

@@ -6,7 +6,7 @@ import ParticlesContainer from '../components/ParticlesContainer';
 const Home = () => {
     return (
         <div className='bg-primary/60 h-full '>
-            <div className='xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0' />
+            <div className='xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge ' />
 
             <div className='w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10'>
                 <div
@@ -18,7 +18,7 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Transforming Ideas <br/> Into <span className="text-accent">Digital Reality</span>
+                        Your Design. <br/> <span className="text-accent">My Code.</span>
                     </motion.h1>
                     <motion.p
                         className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
@@ -27,7 +27,7 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Lorem sad as dg sf sd sdsdfsdf sd fsdf sd sad as dsas das ds a d d as dasdasd d asdas das d
+                        Specializing in responsive and intuitive web interfaces. Let's transform your design dreams into frontend reality.
                     </motion.p>
                     {/*<div className='flex justify-center xl:hidden relative'>*/}
                     {/*    <ProjectsBtn/>*/}
