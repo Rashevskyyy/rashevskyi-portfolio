@@ -2,12 +2,10 @@ import Link from 'next/link'
 import {
     HiHome,
     HiUser,
-    HiViewColumns,
-    HiRectangleGroup,
-    HiChatBubbleBottomCenterText,
     HiEnvelope,
 } from 'react-icons/hi2';
 import {useRouter} from 'next/router';
+import {useEffect, useState} from "react";
 
 export const navData = [
     {name: 'home', path: '/', icon: <HiHome/>},
@@ -23,6 +21,27 @@ export const navData = [
 const Nav = () => {
     const router = useRouter()
     const pathname = router.pathname
+    const [isNavigationBlocked, setNavigationBlocked] = useState(false);
+
+    const handleNavigation = (e, path) => {
+        if (pathname === path) {
+            e.preventDefault();
+            return;
+        }
+
+        if (isNavigationBlocked) {
+            e.preventDefault();
+            return;
+        }
+
+        setNavigationBlocked(true);
+
+        setTimeout(() => {
+            setNavigationBlocked(false);
+            router.push(path);
+        }, 3500);
+    }
+
     return (
         <nav
             className={'flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'}>
@@ -32,7 +51,7 @@ const Nav = () => {
           xl:rounded-full'>
                 {navData.map((link) => {
                     return (
-                        <Link key={link.name} href={link.path} className={`${link.path === pathname && 'text-accent'} relative flex items-center group hover:text-accent transition-all duration-300`}>
+                        <Link onClick={(e) => handleNavigation(e, link.path)} key={link.path} href={link.path} className={`${link.path === pathname && 'text-accent'} relative flex items-center group hover:text-accent transition-all duration-300`}>
                             <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
                                 <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
                                     <div className='text-[12px] leading-none font-semibold capitalize'>
