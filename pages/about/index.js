@@ -142,7 +142,7 @@ const About = () => {
                         animate={'show'}
                         exit={'hidden'}
                     >
-                        With 2+ years as a React JS Developer,
+                        With 3+ years as a React JS Developer,
                         I've transformed concepts into concrete solutions,
                         ensuring every project not only works but also resonates with its audience.
                         Every challenge faced has been a learning opportunity,
