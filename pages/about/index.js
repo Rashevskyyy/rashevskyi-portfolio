@@ -103,8 +103,12 @@ const aboutData = [
         title: 'experience',
         info: [
             {
+                title: 'NORTHELL | SPA FOR ADA(Allied Dealers Auctions)',
+                stage: 'March 2024 - Present',
+            },
+            {
                 title: 'UKRAINIAN UNIVERSAL EXCHANGE',
-                stage: 'March 2022 - Present',
+                stage: 'March 2022 - March 2024',
             },
             {
                 title: 'SPA FOR FINANCIAL SYSTEM',
