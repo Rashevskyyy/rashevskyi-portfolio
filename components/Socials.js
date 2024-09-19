@@ -11,7 +11,7 @@ const Socials = () => {
         <Link href='https://github.com/Rashevskyyy' className='hover:text-accent transition-all duration-300'>
           <RiGithubFill />
         </Link>
-        <Link href='https://www.linkedin.com/in/rashevskyi-oleksii/ className='hover:text-accent transition-all duration-300'>
+        <Link href='https://www.linkedin.com/in/rashevskyi-oleksii/' className='hover:text-accent transition-all duration-300'>
           <RiLinkedinFill />
         </Link>
         <Link href='https://t.me/Rashevskyyy' className='hover:text-accent transition-all duration-300'>
