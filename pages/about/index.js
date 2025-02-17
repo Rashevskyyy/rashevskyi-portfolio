@@ -103,12 +103,8 @@ const aboutData = [
         title: 'experience',
         info: [
             {
-                title: 'NORTHELL | SPA FOR ADA(Allied Dealers Auctions)',
-                stage: 'March 2024 - Present',
-            },
-            {
                 title: 'UKRAINIAN UNIVERSAL EXCHANGE',
-                stage: 'March 2022 - March 2024',
+                stage: 'March 2022 - September 2024',
             },
             {
                 title: 'SPA FOR FINANCIAL SYSTEM',
@@ -146,7 +142,7 @@ const About = () => {
                         animate={'show'}
                         exit={'hidden'}
                     >
-                        With 3+ years as a React JS Developer,
+                        With 4+ years as a React JS Developer,
                         I've transformed concepts into concrete solutions,
                         ensuring every project not only works but also resonates with its audience.
                         Every challenge faced has been a learning opportunity,
@@ -164,7 +160,7 @@ const About = () => {
                             <div
                                 className="relative after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                                    <CountUp start={0} end={3} duration={12}/>+
+                                    <CountUp start={0} end={4} duration={12}/>+
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of
                                     expierence
