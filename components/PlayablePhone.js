@@ -16,6 +16,8 @@ const Preview = ({type}) => {
             <div className="phone-preview preview-gate" aria-hidden>
                 <div className="preview-gate-sky" />
                 <div className="preview-gate-road" />
+                <span className="preview-gate-crew">12</span>
+                <span className="preview-gate-plus">+20</span>
             </div>
         );
     }

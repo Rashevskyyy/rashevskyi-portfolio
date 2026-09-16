@@ -19,7 +19,7 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Playable ads. <br/> <span className="text-accent">Real games.</span>
+                        Your Design. <br/> <span className="text-accent">My Code.</span>
                     </motion.h1>
                     <motion.p
                         className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
@@ -28,8 +28,7 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Playable ads in PixiJS and three.js. A slot-roguelike. A fridge PWA I actually use.
-                        Tight files, no filler, and it has to feel good on a phone.
+                        Playable ads, product UI, and a game when the brief lets me.
                     </motion.p>
                     <div className='flex justify-center xl:hidden relative'>
                         <ProjectsBtn/>

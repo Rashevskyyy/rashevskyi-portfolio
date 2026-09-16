@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form';
 import {toast} from 'react-toastify';
 
 const Contact = () => {
-    const {register, reset, handleSubmit, watch, formState: {errors}} = useForm({
+    const {register, reset, handleSubmit} = useForm({
         defaultValues: {
             name: '',
             email: '',

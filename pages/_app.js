@@ -12,8 +12,8 @@ function MyApp({Component, pageProps}) {
     return (
         <Layout>
             <Head>
-                <title>Oleksii Rashevskyi — Playable ads & games</title>
-                <meta name="description" content="Playable ads, games, and product frontend by Oleksii Rashevskyi." />
+                <title>Rashevskyi Oleksii</title>
+                <meta name="description" content="Frontend by Oleksii Rashevskyi. Playable ads, games, and tools." />
             </Head>
             <ToastContainer
                 position="top-right"

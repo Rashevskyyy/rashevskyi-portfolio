@@ -2,10 +2,13 @@ import {FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact,} from 'react-icons/fa';
 import {
     SiAdobephotoshop,
     SiChai, SiChakraui, SiClickup, SiConfluence,
+    SiDocker,
+    SiFastify,
     SiFigma,
     SiGit, SiJest, SiJira, SiMocha, SiMongodb, SiMui, SiMysql, SiNestjs,
     SiNextdotjs, SiPostgresql, SiPostman,
-    SiRedux, SiReduxsaga, SiStyledcomponents, SiTrello,
+    SiReacthookform, SiReactquery,
+    SiRedux, SiReduxsaga, SiSass, SiSocketdotio, SiStyledcomponents, SiTrello,
     SiTypescript, SiVite, SiWebpack, SiWebstorm, SiThreedotjs, SiGreensock
 } from 'react-icons/si';
 import {useState} from 'react';
@@ -26,26 +29,39 @@ const aboutData = [
                 icons: [
                     { component: <FaHtml5/>, description: 'HTML5' },
                     { component: <FaCss3/>, description: 'CSS3' },
+                    { component: <SiSass/>, description: 'SCSS' },
                     { component: <FaJs/>, description: 'JavaScript' },
                     { component: <FaReact/>, description: 'ReactJS' },
                     { component: <SiNextdotjs/>, description: 'NextJS' },
                     { component: <SiTypescript/>, description: 'TypeScript' },
                     { component: <SiRedux/>, description: 'Redux' },
-                    { component: <SiReduxsaga/>, description: 'ReduxSaga' },
+                    { component: <SiReduxsaga/>, description: 'Redux Saga' },
+                    { component: <SiReactquery/>, description: 'React Query' },
+                    { component: <SiReacthookform/>, description: 'React Hook Form' },
                     { component: <SiStyledcomponents/>, description: 'Styled Components' },
-                    { component: <SiWebpack/>, description: 'Webpack' },
                     { component: <SiMui/>, description: 'Material UI' },
                     { component: <SiChakraui/>, description: 'Chakra UI' },
+                    { component: <SiWebpack/>, description: 'Webpack' },
                     { component: <SiVite/>, description: 'Vite' },
+                ],
+                chips: ['Zustand', 'i18next'],
+            },
+            {
+                title: 'Motion & games',
+                icons: [
                     { component: <SiThreedotjs/>, description: 'Three.js' },
                     { component: <SiGreensock/>, description: 'GSAP' },
                 ],
+                chips: ['PixiJS v8', 'Spine'],
             },
             {
                 title: 'Backend',
                 icons: [
                     { component: <FaNodeJs/>, description: 'NodeJS' },
                     { component: <SiNestjs/>, description: 'NestJS' },
+                    { component: <SiFastify/>, description: 'Fastify' },
+                    { component: <SiSocketdotio/>, description: 'Socket.io' },
+                    { component: <SiDocker/>, description: 'Docker' },
                 ],
             },
             {
@@ -104,16 +120,23 @@ const aboutData = [
         title: 'experience',
         info: [
             {
-                title: 'UKRAINIAN UNIVERSAL EXCHANGE',
-                stage: 'March 2022 - September 2024',
+                title: 'Freelance',
+                role: 'Frontend / Fullstack Developer',
+                stage: 'Sep 2024 to now',
             },
             {
-                title: 'SPA FOR FINANCIAL SYSTEM',
-                stage: 'November 2021 - March 2022',
+                title: 'Me Team · Ukrainian Universal Exchange',
+                role: 'Middle React Developer',
+                stage: 'Mar 2022 to Sep 2024',
             },
             {
-                title: 'RICHPRIZE / ONLINE CASINO',
-                stage: 'March 2021 - November 2021',
+                title: 'Wizards Dev',
+                role: 'React Developer · Trainee → Junior Strong',
+                stage: 'Mar 2021 to Mar 2022',
+                projects: [
+                    'Entertainment platform',
+                    'Financial system SPA',
+                ],
             },
         ],
     },
@@ -122,9 +145,9 @@ const aboutData = [
 const About = () => {
     const [index, setIndex] = useState(0)
     return (
-        <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
+        <div className='h-full bg-primary/30 about-scroll text-center xl:text-left'>
             <Circles/>
-            <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+            <div className='container mx-auto flex flex-col items-center xl:flex-row gap-x-10 gap-y-10'>
 
                 <div className='flex-1 flex flex-col justify-center'>
                     <motion.h2
@@ -134,43 +157,41 @@ const About = () => {
                         animate={'show'}
                         exit={'hidden'}
                     >
-                        From tales to <span className="text-accent">tools.</span>
+                        Five years of <span className="text-accent">frontend.</span>
                     </motion.h2>
                     <motion.p
-                        className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
+                        className='max-w-[540px] mx-auto xl:mx-0 mb-6 xl:mb-10 px-2 xl:px-0'
                         variants={fadeIn('right', 0.4)}
                         initial={'hidden'}
                         animate={'show'}
                         exit={'hidden'}
                     >
-                        With 4+ years as a React JS Developer,
-                        I've transformed concepts into concrete solutions,
-                        ensuring every project not only works but also resonates with its audience.
-                        Every challenge faced has been a learning opportunity,
-                        pushing me to constantly evolve and refine my craft.
+                        React since 2021, playable ads in PixiJS after that.
+                        An exchange, a casino, a fridge I actually open,
+                        a book bot for friends. If it lives on a phone, it has to feel good.
                     </motion.p>
 
                     <motion.div
-                        className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+                        className="flex max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-2"
                         variants={fadeIn('right', 0.6)}
                         initial={'hidden'}
                         animate={'show'}
                         exit={'hidden'}
                     >
-                        <div className="flex xl:gap-x-3">
+                        <div className="flex gap-x-2 xl:gap-x-6">
                             <div
-                                className="relative after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                                className="relative pr-4 xl:pr-6 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                                    <CountUp start={0} end={4} duration={12}/>+
+                                    <CountUp start={0} end={5} duration={8}/>+
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of
                                     experience
                                 </div>
                             </div>
                             <div
-                                className="relative after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                                className="relative pr-4 xl:pr-6 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                                    <CountUp start={0} end={3} duration={10}/>
+                                    <CountUp start={0} end={3} duration={8}/>
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                                     Playable ads
@@ -178,7 +199,7 @@ const About = () => {
                             </div>
                             <div className="relative">
                                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                                    <CountUp start={0} end={6} duration={10}/>
+                                    <CountUp start={0} end={7} duration={8}/>
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                                     Games &amp; tools
@@ -189,7 +210,7 @@ const About = () => {
                 </div>
 
                 <motion.div
-                    className='flex flex-col w-full xl:max-w-[48%] h-[480px]'
+                    className='flex flex-col w-full xl:max-w-[48%]'
                     variants={fadeIn('left', 0.4)}
                     initial={'hidden'}
                     animate={'show'}
@@ -198,31 +219,41 @@ const About = () => {
                     <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
                         {aboutData.map((item, itemIndex) => {
                             return (
-                                <div
+                                <button
+                                    type="button"
                                     key={itemIndex}
                                     onClick={() => setIndex(itemIndex)}
-                                    className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                                    className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0 bg-transparent`}
                                 >
                                     {item.title}
-                                </div>
+                                </button>
                             )
                         })}
                     </div>
-                    <div className='py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start'>
+                    <div className='py-2 xl:py-6 flex flex-col gap-y-3 xl:gap-y-4 items-center xl:items-start'>
                         {aboutData[index].info.map((item, itemIndex) => {
                             return (
                                 <div
                                     key={itemIndex}
                                     className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'
                                 >
-                                    <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                                    <div className='hidden md:flex'>
-                                        -
-                                    </div>
-                                    <div className='hidden md:flex'>
-                                        {item.stage}
-                                    </div>
-                                    <div className='flex gap-x-4'>
+                                    {item.icons ? (
+                                        <div className="about-skill-label">{item.title}</div>
+                                    ) : (
+                                        <div className="about-job">
+                                            <div className="about-job-title">{item.title}</div>
+                                            {item.role && <div className="about-job-role">{item.role}</div>}
+                                            {item.stage && <div className="about-job-stage">{item.stage}</div>}
+                                            {item.projects && (
+                                                <div className="about-job-projects">
+                                                    {item.projects.map((project) => (
+                                                        <span key={project}>{project}</span>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                    <div className='flex flex-wrap justify-center xl:justify-start gap-x-3 gap-y-2 items-center'>
                                         {item.icons?.map((iconData, iconIndex) => {
                                             return (
                                                 <div key={iconIndex}
@@ -232,6 +263,9 @@ const About = () => {
                                                 </div>
                                             )
                                         })}
+                                        {item.chips?.map((chip) => (
+                                            <span key={chip} className="skill-chip">{chip}</span>
+                                        ))}
                                     </div>
                                 </div>
                             )

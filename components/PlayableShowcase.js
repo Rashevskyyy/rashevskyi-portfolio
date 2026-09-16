@@ -119,8 +119,8 @@ const PlayableShowcase = () => {
                     Playables <span className="text-accent">.</span>
                 </motion.h2>
                 <p className="mb-4 max-w-[420px] mx-auto xl:mx-0">
-                    Thirty-second ads that have to feel like a real game on a phone.
-                    One HTML file. Pick a demo — it is already running.
+                    Thirty seconds to feel like a real game. One HTML file.
+                    Pick a demo, it is already running.
                 </p>
                 <motion.div
                     key={current.id}
@@ -149,7 +149,7 @@ const PlayableShowcase = () => {
                             </span>
                         ))}
                     </div>
-                    <div className="flex flex-wrap items-center justify-center xl:justify-start gap-4">
+                    <div className="flex flex-wrap items-center justify-center xl:justify-start gap-3">
                         <button
                             type="button"
                             onClick={openTheater}
@@ -160,6 +160,16 @@ const PlayableShowcase = () => {
                             </span>
                             <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
                         </button>
+                        <a
+                            href={current.repo}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="source-btn"
+                            aria-label={`${current.title} source on GitHub`}
+                        >
+                            <BsGithub />
+                            Source
+                        </a>
                         <button
                             type="button"
                             onClick={restart}
@@ -168,15 +178,6 @@ const PlayableShowcase = () => {
                         >
                             <BsArrowClockwise className="text-xl" />
                         </button>
-                        <a
-                            href={current.repo}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="h-[52px] px-4 rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/50 transition-all flex items-center"
-                            aria-label={`${current.title} source on GitHub`}
-                        >
-                            <BsGithub className="text-xl" />
-                        </a>
                     </div>
                 </motion.div>
             </div>
@@ -188,43 +189,45 @@ const PlayableShowcase = () => {
 
                 {desktop === true && (
                 <div
-                    className="playable-stage flex"
+                    className="playable-stage-wrap"
                     style={{'--glow': current.glow, '--glow-soft': current.glowSoft}}
                 >
-                    <div className="playable-glow" />
-                    {playables.map((playable, index) => {
-                        const slot = slotFor(index, selected, playables.length);
-                        if (slot === 'center') return null;
-                        return (
-                            <motion.div
-                                key={playable.id}
-                                className="playable-slot is-side"
-                                variants={slotMotion}
-                                initial={false}
-                                animate={slot}
-                                transition={{type: 'spring', stiffness: 260, damping: 28}}
-                                onClick={() => select(index)}
-                                role="button"
-                                tabIndex={0}
-                                onKeyDown={(event) => {
-                                    if (event.key === 'Enter' || event.key === ' ') {
-                                        event.preventDefault();
-                                        select(index);
-                                    }
-                                }}
-                            >
-                                <PlayablePhone playable={playable} />
-                            </motion.div>
-                        );
-                    })}
-                    <div className="playable-slot is-center">
-                        <PlayablePhone
-                            key={`${current.id}-${frameKey}`}
-                            playable={current}
-                            live={!theater}
-                            interactive={interactive && !theater}
-                            onActivate={openTheater}
-                        />
+                    <div className="playable-stage flex">
+                        <div className="playable-glow" />
+                        {playables.map((playable, index) => {
+                            const slot = slotFor(index, selected, playables.length);
+                            if (slot === 'center') return null;
+                            return (
+                                <motion.div
+                                    key={playable.id}
+                                    className="playable-slot is-side"
+                                    variants={slotMotion}
+                                    initial={false}
+                                    animate={slot}
+                                    transition={{type: 'spring', stiffness: 260, damping: 28}}
+                                    onClick={() => select(index)}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(event) => {
+                                        if (event.key === 'Enter' || event.key === ' ') {
+                                            event.preventDefault();
+                                            select(index);
+                                        }
+                                    }}
+                                >
+                                    <PlayablePhone playable={playable} />
+                                </motion.div>
+                            );
+                        })}
+                        <div className="playable-slot is-center">
+                            <PlayablePhone
+                                key={`${current.id}-${frameKey}`}
+                                playable={current}
+                                live={!theater}
+                                interactive={interactive && !theater}
+                                onActivate={openTheater}
+                            />
+                        </div>
                     </div>
                     <div className="playable-picks">
                         {playables.map((playable, index) => (
@@ -258,26 +261,25 @@ const PlayableShowcase = () => {
                             onActivate={openTheater}
                         />
                     )}
+                    <div className="flex flex-wrap justify-center gap-3 mt-4">
+                        {playables.map((playable, index) => (
+                            <button
+                                key={playable.id}
+                                type="button"
+                                onClick={() => select(index)}
+                                className={`px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.18em] border transition-all duration-300 ${
+                                    index === selected
+                                        ? 'border-transparent font-semibold'
+                                        : 'border-white/20 text-white/70 hover:border-white/50 hover:text-white'
+                                }`}
+                                style={index === selected ? {background: playable.glow, color: '#131424'} : undefined}
+                            >
+                                {playable.title}
+                            </button>
+                        ))}
+                    </div>
                 </div>
                 )}
-
-                <div className="flex xl:hidden justify-center gap-3 mt-4">
-                    {playables.map((playable, index) => (
-                        <button
-                            key={playable.id}
-                            type="button"
-                            onClick={() => select(index)}
-                            className={`px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.18em] border transition-all duration-300 ${
-                                index === selected
-                                    ? 'border-transparent font-semibold'
-                                    : 'border-white/20 text-white/70 hover:border-white/50 hover:text-white'
-                            }`}
-                            style={index === selected ? {background: playable.glow, color: '#131424'} : undefined}
-                        >
-                            {playable.title}
-                        </button>
-                    ))}
-                </div>
             </div>
 
             {mounted && createPortal(
