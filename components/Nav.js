@@ -3,14 +3,14 @@ import {
     HiHome,
     HiUser,
     HiEnvelope,
+    HiViewColumns,
 } from 'react-icons/hi2';
 import {useRouter} from 'next/router';
-import {useEffect, useState} from "react";
 
 export const navData = [
     {name: 'home', path: '/', icon: <HiHome/>},
     {name: 'about', path: '/about', icon: <HiUser/>},
-    // {name: 'work', path: '/work', icon: <HiViewColumns/>},
+    {name: 'work', path: '/work', icon: <HiViewColumns/>},
     {
         name: 'contact',
         path: '/contact',
@@ -21,26 +21,6 @@ export const navData = [
 const Nav = () => {
     const router = useRouter()
     const pathname = router.pathname
-    const [isNavigationBlocked, setNavigationBlocked] = useState(false);
-
-    const handleNavigation = (e, path) => {
-        if (pathname === path) {
-            e.preventDefault();
-            return;
-        }
-
-        if (isNavigationBlocked) {
-            e.preventDefault();
-            return;
-        }
-
-        setNavigationBlocked(true);
-
-        setTimeout(() => {
-            setNavigationBlocked(false);
-            router.push(path);
-        }, 3500);
-    }
 
     return (
         <nav
@@ -51,7 +31,7 @@ const Nav = () => {
           xl:rounded-full'>
                 {navData.map((link) => {
                     return (
-                        <Link onClick={(e) => handleNavigation(e, link.path)} key={link.path} href={link.path} className={`${link.path === pathname && 'text-accent'} relative flex items-center group hover:text-accent transition-all duration-300`}>
+                        <Link key={link.path} href={link.path} className={`${link.path === pathname && 'text-accent'} relative flex items-center group hover:text-accent transition-all duration-300`}>
                             <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
                                 <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
                                     <div className='text-[12px] leading-none font-semibold capitalize'>

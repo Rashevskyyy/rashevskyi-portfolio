@@ -6,13 +6,12 @@ import {
     SiGit, SiJest, SiJira, SiMocha, SiMongodb, SiMui, SiMysql, SiNestjs,
     SiNextdotjs, SiPostgresql, SiPostman,
     SiRedux, SiReduxsaga, SiStyledcomponents, SiTrello,
-    SiTypescript, SiVite, SiWebpack, SiWebstorm
+    SiTypescript, SiVite, SiWebpack, SiWebstorm, SiThreedotjs, SiGreensock
 } from 'react-icons/si';
 import {useState} from 'react';
 import Circles from '../../components/Circles';
 import {motion} from 'framer-motion';
 import {fadeIn} from '../../variants';
-import Avatar from '../../components/Avatar';
 import CountUp from 'react-countup';
 import {GrGithub} from "react-icons/gr";
 import {FaBitbucket, FaGitlab} from "react-icons/fa6";
@@ -38,6 +37,8 @@ const aboutData = [
                     { component: <SiMui/>, description: 'Material UI' },
                     { component: <SiChakraui/>, description: 'Chakra UI' },
                     { component: <SiVite/>, description: 'Vite' },
+                    { component: <SiThreedotjs/>, description: 'Three.js' },
+                    { component: <SiGreensock/>, description: 'GSAP' },
                 ],
             },
             {
@@ -163,7 +164,7 @@ const About = () => {
                                     <CountUp start={0} end={4} duration={12}/>+
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of
-                                    expierence
+                                    experience
                                 </div>
                             </div>
                             <div
@@ -172,7 +173,15 @@ const About = () => {
                                     <CountUp start={0} end={3} duration={10}/>
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                                    Finished projects
+                                    Playable ads
+                                </div>
+                            </div>
+                            <div className="relative">
+                                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                                    <CountUp start={0} end={6} duration={10}/>
+                                </div>
+                                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                                    Games &amp; tools
                                 </div>
                             </div>
                         </div>

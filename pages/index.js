@@ -2,6 +2,7 @@ import {motion} from 'framer-motion';
 import {fadeIn} from '../variants';
 import Avatar from '../components/Avatar';
 import ParticlesContainer from '../components/ParticlesContainer';
+import ProjectsBtn from '../components/ProjectsBtn';
 
 const Home = () => {
     return (
@@ -18,7 +19,7 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Your Design. <br/> <span className="text-accent">My Code.</span>
+                        Playable ads. <br/> <span className="text-accent">Real games.</span>
                     </motion.h1>
                     <motion.p
                         className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
@@ -27,20 +28,21 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Specializing in responsive and intuitive web interfaces. Let's transform your design dreams into frontend reality.
+                        Playable ads in PixiJS and three.js. A slot-roguelike. A fridge PWA I actually use.
+                        Tight files, no filler, and it has to feel good on a phone.
                     </motion.p>
-                    {/*<div className='flex justify-center xl:hidden relative'>*/}
-                    {/*    <ProjectsBtn/>*/}
-                    {/*</div>*/}
-                    {/*<motion.div*/}
-                    {/*    className="hidden xl:flex"*/}
-                    {/*    variants={fadeIn('down', 0.4)}*/}
-                    {/*    initial={'hidden'}*/}
-                    {/*    animate={'show'}*/}
-                    {/*    exit={"hidden"}*/}
-                    {/*>*/}
-                    {/*    <ProjectsBtn/>*/}
-                    {/*</motion.div>*/}
+                    <div className='flex justify-center xl:hidden relative'>
+                        <ProjectsBtn/>
+                    </div>
+                    <motion.div
+                        className="hidden xl:flex"
+                        variants={fadeIn('down', 0.4)}
+                        initial={'hidden'}
+                        animate={'show'}
+                        exit={"hidden"}
+                    >
+                        <ProjectsBtn/>
+                    </motion.div>
                 </div>
             </div>
             <div className="w-[1200px] h-full absolute right-0 bottom-0">

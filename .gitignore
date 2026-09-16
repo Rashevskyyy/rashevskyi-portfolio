@@ -29,6 +29,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# copied game builds that are not the source of truth
+/public/projects/
+
 # vercel
 .vercel
 
