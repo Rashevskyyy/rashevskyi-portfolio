@@ -13,7 +13,7 @@ function MyApp({Component, pageProps}) {
         <Layout>
             <Head>
                 <title>Rashevskyi Oleksii</title>
-                <meta name="description" content="Frontend by Oleksii Rashevskyi. Playable ads, games, and tools." />
+                <meta name="description" content="Oleksii Rashevskyi, slot game and frontend developer. Slot games in PixiJS, playable ads and product UI." />
             </Head>
             <ToastContainer
                 position="top-right"

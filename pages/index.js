@@ -28,7 +28,7 @@ const Home = () => {
                         animate={'show'}
                         exit={"hidden"}
                     >
-                        Playable ads, product UI, and a game when the brief lets me.
+                        Slot games in PixiJS, from the reels to the server behind them. Playable ads and product UI too.
                     </motion.p>
                     <div className='flex justify-center xl:hidden relative'>
                         <ProjectsBtn/>
