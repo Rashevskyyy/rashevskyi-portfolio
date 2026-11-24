@@ -17,50 +17,6 @@ const LiveLink = ({href, label}) => (
     </a>
 );
 
-const FjordPreview = () => (
-    <div className="fjord-preview" aria-hidden>
-        <div className="fjord-preview-bar">
-            <b>Fjordfall</b>
-            <span>Daily seed · 124 gold</span>
-        </div>
-        <div className="fjord-reels">
-            {['⚡', '🪓', '🐺', '📯', '💰'].map((symbol, index) => (
-                <div key={symbol} className="fjord-reel">
-                    <div className="fjord-reel-strip" style={{animationDelay: `${index * -0.35}s`}}>
-                        <span>⚡</span><span>🪓</span><span>🐺</span><span>📯</span><span>💰</span>
-                        <span>⚡</span><span>🪓</span><span>🐺</span><span>📯</span><span>💰</span>
-                    </div>
-                </div>
-            ))}
-        </div>
-        <div className="fjord-buildings">
-            <article className="is-hero">
-                <i>⚔️</i>
-                <div>
-                    <strong>Great Hall</strong>
-                    <em>Raid</em>
-                </div>
-            </article>
-            <article>
-                <i>⚡</i>
-                <div>
-                    <strong>Berserker Hall</strong>
-                    <em>Clan</em>
-                </div>
-            </article>
-            <article>
-                <i>🐍</i>
-                <div>
-                    <strong>Serpent Altar</strong>
-                    <em>Boss</em>
-                </div>
-            </article>
-        </div>
-        <p className="demo-caption">Spin, draft, raid Valhalla</p>
-        <div className="fjord-spin">Spin</div>
-    </div>
-);
-
 const FridgeMock = () => (
     <div className="fridge-shell" aria-hidden>
         <span className="fridge-scan" />
@@ -179,30 +135,11 @@ const GourmetPreview = () => (
 const LabPreview = ({id}) => (id === 'living-farm' ? <FarmPreview /> : <RuinsPreview />);
 
 const MoreWork = () => {
-    const fjord = featured.fjordfall;
     const fridge = featured.fridge;
     const gourmet = featured.gourmet;
 
     return (
         <div className="more-work">
-            <section className="band band-fjord">
-                <div className="container mx-auto band-grid">
-                    <div>
-                        <p className="band-index">02</p>
-                        <p className="band-kicker" style={{color: fjord.glow}}>{fjord.kicker}</p>
-                        <h3 className="band-title" style={{color: fjord.glow}}>{fjord.title}</h3>
-                        <p className="band-tagline">{fjord.tagline}</p>
-                        <p className="mb-4">{fjord.blurb}</p>
-                        <p className="text-sm text-white/45 mb-6">{fjord.hint}</p>
-                        <ul className="band-tags">
-                            {fjord.stack.map((item) => <li key={item}>{item}</li>)}
-                        </ul>
-                        {fjord.repo && <SourceLink href={fjord.repo} label="Fjordfall source on GitHub" />}
-                    </div>
-                    <FjordPreview />
-                </div>
-            </section>
-
             <section className="band band-fridge">
                 <div className="container mx-auto band-grid band-grid-flip">
                     <FridgeMock />

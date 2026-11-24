@@ -1,4 +1,5 @@
 import Circles from '../../components/Circles';
+import SlotShowcase from '../../components/SlotShowcase';
 import PlayableShowcase from '../../components/PlayableShowcase';
 import MoreWork from '../../components/MoreWork';
 
@@ -9,6 +10,12 @@ const Work = () => {
             <section className="work-hero">
                 <div className="container mx-auto w-full">
                     <p className="band-index text-center xl:text-left mb-2">01</p>
+                    <SlotShowcase />
+                </div>
+            </section>
+            <section className="band band-playables">
+                <div className="container mx-auto w-full">
+                    <p className="band-index text-center xl:text-left mb-2">02</p>
                     <PlayableShowcase />
                 </div>
             </section>

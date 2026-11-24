@@ -95,7 +95,7 @@ const PlayableShowcase = () => {
     }, []);
 
     useEffect(() => {
-        const node = document.querySelector('.work-hero');
+        const node = document.querySelector('.band-playables');
         if (!node) return undefined;
         const observer = new IntersectionObserver(
             ([entry]) => {

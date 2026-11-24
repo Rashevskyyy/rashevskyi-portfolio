@@ -115,10 +115,147 @@
   scroll-margin-top: 5rem;
 }
 
-.band-fjord {
-  background:
-    radial-gradient(70% 80% at 85% 50%, rgba(255, 195, 77, 0.12), transparent 62%),
-    linear-gradient(180deg, transparent, rgba(12, 14, 20, 0.35), transparent);
+.band-playables {
+  padding-top: 3rem;
+}
+
+/* Slots: the cabinet shows the real game as a muted loop; the theater runs it live */
+.slot-stage {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.slot-stage::before {
+  content: '';
+  position: absolute;
+  inset: 6% 4%;
+  border-radius: 40px;
+  background: var(--glow-soft);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.slot-cabinet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #0b1530;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  text-align: left;
+}
+
+.slot-cabinet-screen {
+  display: block;
+  aspect-ratio: 16 / 9;
+}
+
+.slot-cabinet-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* base of the cabinet: keeps the call to action off the game's own UI */
+.slot-cabinet-base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slot-cabinet.is-mock {
+  padding: 28px 16px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  cursor: default;
+}
+
+.slot-cabinet-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+.slot-cabinet-note {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.slot-cabinet:hover .slot-cabinet-play,
+.slot-cabinet:focus-visible .slot-cabinet-play {
+  background: var(--glow);
+  border-color: var(--glow);
+  color: #131424;
+}
+
+.slot-cabinet:focus-visible {
+  outline: 3px solid var(--glow);
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .slot-cabinet-note {
+    display: none;
+  }
+}
+
+.slot-theater-frame {
+  width: min(94vw, calc(86vh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #061a40;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+.slot-theater-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* on a phone the game takes the whole screen; it lays itself out for portrait or landscape */
+@media (max-width: 900px), (orientation: portrait) {
+  .slot-theater-frame {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    aspect-ratio: auto;
+    border-radius: 0;
+  }
+
+  /* у грі кути зайняті меню й кнопками, тож «Закрити» — посередині вгорі */
+  .slot-theater .playable-theater-close {
+    top: calc(env(safe-area-inset-top) + 8px);
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 36px;
+    font-size: 11px;
+  }
 }
 
 .band-fridge {

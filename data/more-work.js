@@ -1,16 +1,4 @@
 export const featured = {
-    fjordfall: {
-        id: 'fjordfall',
-        kicker: 'Slot · Roguelike · Deckbuilder',
-        title: 'Fjordfall',
-        tagline: 'Build the jackpot as you go.',
-        blurb: 'A northern slot where you draft the jackpot. Spin once, then bank it or push your luck. The game core never touches the DOM.',
-        hint: 'Draft the horn, lock symbols, bank or double. Daily runs share one seed, like Wordle.',
-        repo: 'https://github.com/Rashevskyyy/fjordfall',
-        stack: ['TypeScript', 'GSAP', 'Vite', 'Deterministic RNG'],
-        glow: '#ffc34d',
-        glowSoft: 'rgba(255, 195, 77, 0.28)',
-    },
     fridge: {
         id: 'fridge',
         kicker: 'PWA · Product',

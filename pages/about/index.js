@@ -121,8 +121,12 @@ const aboutData = [
         info: [
             {
                 title: 'Freelance',
-                role: 'Frontend / Fullstack Developer',
+                role: 'Slot Game Developer · Frontend / Fullstack',
                 stage: 'Sep 2024 to now',
+                projects: [
+                    'GOREEL: three released slot games (PixiJS, GSAP, Spine)',
+                    'Abyssal Tide and Fjordfall, my own slots',
+                ],
             },
             {
                 title: 'Me Team · Ukrainian Universal Exchange',
@@ -166,9 +170,9 @@ const About = () => {
                         animate={'show'}
                         exit={'hidden'}
                     >
-                        React since 2021, playable ads in PixiJS after that.
-                        An exchange, a casino, a fridge I actually open,
-                        a book bot for friends. If it lives on a phone, it has to feel good.
+                        React since 2021, slot games in PixiJS since 2024:
+                        three released at GOREEL, two of my own. Playable ads, an exchange,
+                        a fridge I actually open, a book bot for friends. If it lives on a phone, it has to feel good.
                     </motion.p>
 
                     <motion.div
@@ -194,7 +198,7 @@ const About = () => {
                                     <CountUp start={0} end={3} duration={8}/>
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                                    Playable ads
+                                    Released slots
                                 </div>
                             </div>
                             <div className="relative">
