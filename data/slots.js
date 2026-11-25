@@ -1,7 +1,8 @@
 // Slots on the Work page. Add a new game by appending an entry:
 // `play` opens the live demo in the theater, `video`/`poster` fill the cabinet,
 // `preview: 'fjord'` uses a built-in mock instead of a video.
-const ABYSSAL = 'https://rashevskyyy.github.io/abyssal-tide';
+// ігри живуть у монорепо slotkit, кожна у своїй теці на Pages
+const ABYSSAL = 'https://rashevskyyy.github.io/slotkit/abyssal-tide';
 
 export const slots = [
     {
@@ -13,7 +14,7 @@ export const slots = [
         hint: 'Hit Play and spin, or open Menu → Show bonus to jump straight into a Salvage with all three jars full.',
         play: `${ABYSSAL}/play/index.html`,
         caseStudy: `${ABYSSAL}/`,
-        repo: 'https://github.com/Rashevskyyy/abyssal-tide',
+        repo: 'https://github.com/Rashevskyyy/slotkit/tree/main/games/abyssal-tide',
         video: `${ABYSSAL}/media/abyssal-tide.mp4`,
         poster: `${ABYSSAL}/media/big-win.jpg`,
         stack: ['PixiJS v8', 'GSAP', 'Spine', 'TypeScript', 'Fastify', 'PostgreSQL'],
