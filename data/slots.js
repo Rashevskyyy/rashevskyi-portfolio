@@ -3,6 +3,7 @@
 // `preview: 'fjord'` uses a built-in mock instead of a video.
 // ігри живуть у монорепо slotkit, кожна у своїй теці на Pages
 const ABYSSAL = 'https://rashevskyyy.github.io/slotkit/abyssal-tide';
+const BLOOM = 'https://rashevskyyy.github.io/slotkit/petrykivka-bloom';
 
 export const slots = [
     {
@@ -20,6 +21,22 @@ export const slots = [
         stack: ['PixiJS v8', 'GSAP', 'Spine', 'TypeScript', 'Fastify', 'PostgreSQL'],
         glow: '#8fb8ff',
         glowSoft: 'rgba(80, 140, 255, 0.28)',
+    },
+    {
+        id: 'petrykivka-bloom',
+        title: 'Petrykivka Bloom',
+        kicker: 'Slot · Cluster pays · 7×7',
+        tagline: 'Every win plants a flower.',
+        blurb: 'A cluster slot painted in the Petrykivka folk style. Wins leave flowers that multiply the next clusters, up to ×128, and in free spins they stay until the bonus ends. Same kit and game server as Abyssal Tide, math simulated over 10 million rounds.',
+        hint: 'Hit Play and spin, or open Rules → See the features to watch the Stroke, a chain of tumbles or the bonus.',
+        play: `${BLOOM}/play/index.html`,
+        caseStudy: `${BLOOM}/`,
+        repo: 'https://github.com/Rashevskyyy/slotkit/tree/main/games/petrykivka-bloom',
+        video: `${BLOOM}/media/petrykivka-bloom.mp4`,
+        poster: `${BLOOM}/media/poster.jpg`,
+        stack: ['PixiJS v8', 'GSAP', 'TypeScript', 'WebAudio', 'Fastify', 'PostgreSQL'],
+        glow: '#f2b630',
+        glowSoft: 'rgba(242, 182, 48, 0.26)',
     },
     {
         id: 'fjordfall',

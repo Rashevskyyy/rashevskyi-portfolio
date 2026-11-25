@@ -125,7 +125,7 @@ const aboutData = [
                 stage: 'Sep 2024 to now',
                 projects: [
                     'GOREEL: three released slot games (PixiJS, GSAP, Spine)',
-                    'Abyssal Tide and Fjordfall, my own slots',
+                    'Abyssal Tide, Petrykivka Bloom and Fjordfall, my own slots',
                 ],
             },
             {
@@ -171,7 +171,7 @@ const About = () => {
                         exit={'hidden'}
                     >
                         React since 2021, slot games in PixiJS since 2024:
-                        three released at GOREEL, two of my own. Playable ads, an exchange,
+                        three released at GOREEL, three of my own. Playable ads, an exchange,
                         a fridge I actually open, a book bot for friends. If it lives on a phone, it has to feel good.
                     </motion.p>
 
